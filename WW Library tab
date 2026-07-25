@@ -1,0 +1,54 @@
+//-----------------------------------------------------
+// BANNED WORD FILTER SYSTEM
+//-----------------------------------------------------
+
+if (state.banWords === undefined) {
+    state.banWords = true;
+}
+
+//List off the words you don't want users to use here. In ""s and separated by , 
+const BANNED_WORDS = [
+    "piss",
+    "slut",
+    "cunt",
+    "whore",
+    "ass",
+    "fuck",
+    "shit",
+    "damn"
+];
+
+
+function checkBannedWords(text) {
+
+    if (state.banWords === false) {
+        return false;
+    }
+
+    for (let word of BANNED_WORDS) {
+
+        if (text.toLowerCase().includes(word)) {
+            return true;
+        }
+
+    }
+
+    return false;
+}
+
+function replaceBannedWords(text) {
+
+    if (state.banWords === false) {
+        return text;
+    }
+
+    for (let word of BANNED_WORDS) {
+
+        let regex = new RegExp(word, "gi");
+
+        text = text.replace(regex, "[BLOCKED]");
+    }
+
+
+    return text;
+}
