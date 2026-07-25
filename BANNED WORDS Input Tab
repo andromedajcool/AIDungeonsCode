@@ -2,14 +2,17 @@ function modifier(text) {
 
     let command = text.trim().toLowerCase();
 
-
-    // TURN FILTER OFF
+    //  TURN FILTER OFF
+    //  command is what is put in the story to toggle use of words on/off. (orange words between "quotations")
+    //  Best to use something like a command and not something that would accidentally be inputted 
+    //  allow_bannedwords_on vs. allow banned words. 
     if (command === "allow_bannedwords_on") {
 
         state.banWords = false;
 
+    //  RETURN is what the Adventure will say when the command is entered
         return {
-            text: "FILTER SETTINGS: Banned words filter is now OFF."
+            text: " ☢️ FILTER SETTINGS: Banned words filter is now OFF. "
         };
     }
 
@@ -20,7 +23,7 @@ function modifier(text) {
         state.banWords = true;
 
         return {
-            text: "FILTER SETTINGS: Banned words filter is now ON."
+            text: " FILTER SETTINGS: Banned words filter is now ON. "
         };
     }
 
