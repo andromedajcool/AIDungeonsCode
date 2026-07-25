@@ -1,0 +1,47 @@
+function modifier(text) {
+
+    let command = text.trim().toLowerCase();
+
+
+    // TURN FILTER OFF
+    if (command === "allow_bannedwords_on") {
+
+        state.banWords = false;
+
+        return {
+            text: "FILTER SETTINGS: Banned words filter is now OFF."
+        };
+    }
+
+
+    // TURN FILTER ON
+    if (command === "allow_bannedwords_off") {
+
+        state.banWords = true;
+
+        return {
+            text: "FILTER SETTINGS: Banned words filter is now ON."
+        };
+    }
+
+
+    // BLOCK PLAYER INPUT
+    //Message if user tries to input BANNED word or phrase
+    if (checkBannedWords(text)) {
+
+        return {
+            text:
+`[Your input contains a blocked word.
+
+Please rewrite your message.]`
+        };
+
+    }
+
+    return {
+        text: text
+    };
+}
+
+//DO NOT EDIT THIS PART
+modifier(text)
