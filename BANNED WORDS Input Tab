@@ -46,5 +46,5 @@ Please rewrite your message.]`
     };
 }
 
-//DO NOT EDIT THIS PART
+// DO NOT modify this part
 modifier(text)
