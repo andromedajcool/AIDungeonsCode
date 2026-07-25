@@ -17,6 +17,7 @@ const BANNED_WORDS = [
     "cunt",
     "whore",
     "fuck",
+    "asshole",
     "🖕",
     "shit",
     "damn"
