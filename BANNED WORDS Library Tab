@@ -10,6 +10,7 @@ if (state.banWords === undefined) {
 // List off the words you don't want users to be able to put here. 
 // In ""s and separated by , 
 // Last word in the list does NOT need a , after it.
+// Be careful with blocking smaller words. Blocking "ass" will block "ass" "glass" "asset"
 const BANNED_WORDS = [
     "piss",
     "slut",
