@@ -7,5 +7,5 @@ function modifier(text) {
     };
 }
 
-// Don't modify this part
+// DO NOT modify this part
 modifier(text)
