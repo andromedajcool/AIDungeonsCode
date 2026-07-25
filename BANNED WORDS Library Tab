@@ -6,7 +6,10 @@ if (state.banWords === undefined) {
     state.banWords = true;
 }
 
-//List off the words you don't want users to use here. In ""s and separated by , 
+// BANNED WORD FILTER list
+// List off the words you don't want users to be able to put here. 
+// In ""s and separated by , 
+// Last word in the list does NOT need a , after it.
 const BANNED_WORDS = [
     "piss",
     "slut",
@@ -14,6 +17,7 @@ const BANNED_WORDS = [
     "whore",
     "ass",
     "fuck",
+    "🖕",
     "shit",
     "damn"
 ];
